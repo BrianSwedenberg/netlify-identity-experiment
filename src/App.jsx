@@ -69,65 +69,65 @@ const netlifyAuth = {
   }
 };
 
-const AuthButton = () => useNavigate(
-  ({ history }) =>
-    netlifyAuth.isAuthenticated ? (
-      <p>
-        Welcome!{' '}
-        <button
-          onClick={() => {
-            netlifyAuth.signout(() => history.push('/'));
-          }}
-        >
-          Sign out
-        </button>
-      </p>
-    ) : (
-      <p>You are not logged in.</p>
-    )
-);
+// const AuthButton = () => useNavigate(
+//   ({ history }) =>
+//     netlifyAuth.isAuthenticated ? (
+//       <p>
+//         Welcome!{' '}
+//         <button
+//           onClick={() => {
+//             netlifyAuth.signout(() => history.push('/'));
+//           }}
+//         >
+//           Sign out
+//         </button>
+//       </p>
+//     ) : (
+//       <p>You are not logged in.</p>
+//     )
+// );
 
-function PrivateRoute({ component: Component, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        netlifyAuth.isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Navigate
-            to={{
-              pathname: '/login',
-              state: { from: props.location }
-            }}
-          />
-        )
-      }
-    />
-  );
-}
+// function PrivateRoute({ component: Component, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={props =>
+//         netlifyAuth.isAuthenticated ? (
+//           <Component {...props} />
+//         ) : (
+//           <Navigate
+//             to={{
+//               pathname: '/login',
+//               state: { from: props.location }
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
 
-class Login extends React.Component {
-  state = { redirectToReferrer: false };
+// class Login extends React.Component {
+//   state = { redirectToReferrer: false };
 
-  login = () => {
-    netlifyAuth.authenticate(() => {
-      this.setState({ redirectToReferrer: true });
-    });
-  };
+//   login = () => {
+//     netlifyAuth.authenticate(() => {
+//       this.setState({ redirectToReferrer: true });
+//     });
+//   };
 
-  render() {
-    let { from } = this.props.location.state || { from: { pathname: '/' } };
-    let { redirectToReferrer } = this.state;
+//   render() {
+//     let { from } = this.props.location.state || { from: { pathname: '/' } };
+//     let { redirectToReferrer } = this.state;
 
-    if (redirectToReferrer) return <Navigate to={from} />;
+//     if (redirectToReferrer) return <Navigate to={from} />;
 
-    return (
-      <div>
-        <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
-      </div>
-    );
-  }
-}
+//     return (
+//       <div>
+//         <p>You must log in to view the page at {from.pathname}</p>
+//         <button onClick={this.login}>Log in</button>
+//       </div>
+//     );
+//   }
+// }
 export default AuthExample;
