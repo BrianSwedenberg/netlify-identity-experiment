@@ -1,4 +1,6 @@
 import React from 'react';
-export default function Public() {
+function Public() {
   return <h3>Public</h3>;
-}
+};
+
+export default Public

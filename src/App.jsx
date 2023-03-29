@@ -32,9 +32,9 @@ function AuthExample() {
           </li>
         </ul>
         <Routes>
-          <Route path="/public" component={Public} />
-          <Route path="/login" component={Login} />
-          <Route path="/protected" component={Protected} />
+          <Route path="/public" element={<Public />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/protected" element={<Protected />} />
         </Routes>
       </div>
     </Router>

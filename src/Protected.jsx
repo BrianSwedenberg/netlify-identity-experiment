@@ -1,6 +1,6 @@
 import React from 'react';
 import netlifyIdentity from 'netlify-identity-widget';
-export default function Protected() {
+function Protected() {
   const user = netlifyIdentity.currentUser();
   console.log({ user });
   return (
@@ -9,4 +9,6 @@ export default function Protected() {
       You are logged in as <b>{user.email}</b>
     </div>
   );
-}
+};
+
+export default Protected
