@@ -1,6 +1,7 @@
 import React from 'react';
 import Protected from './Protected';
 import Public from './Public';
+import LoginPageNoRouter from './LoginNoRouter';
 import netlifyIdentity from 'netlify-identity-widget';
 import {
   BrowserRouter as Router,
@@ -20,25 +21,31 @@ import {useNavigate} from 'react-router';
 
 function AuthExample() {
   return (
-    <Router>
-      <div>
-        <AuthButton />
-        <ul>
-          <li>
-            <Link to="/public">Public Page</Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page</Link>
-          </li>
-        </ul>
-        <Routes>
-          <Route path="/public" element={<Public />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/protected" element={<Protected />} />
-        </Routes>
-      </div>
-    </Router>
+    <body className='main-body'>
+      <LoginPageNoRouter />
+    </body>
   );
+  
+//   return (
+//     <Router>
+//       <div>
+// {/*         <AuthButton /> */}
+//         <ul>
+//           <li>
+//             <Link to="/public">Public Page</Link>
+//           </li>
+//           <li>
+//             <Link to="/protected">Protected Page</Link>
+//           </li>
+//         </ul>
+//         <Routes>
+//           <Route path="/public" element={<Public />} />
+//           <Route path="/login" element={<Login />} />
+//           <Route path="/protected" element={<Protected />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
 }
 
 const netlifyAuth = {

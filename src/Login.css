@@ -1,0 +1,41 @@
+.login-button{
+  color: #333;
+  border-color: #333;
+  background-color: #fff;
+  
+/*   margin: 2px; */
+}
+
+.LoginPanel{
+  width: 100vw;
+/*   border: 50px solid;
+  border-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+}
+
+.logoType{
+/*   display: flex; */
+/*   max-width: 50%; */
+/*   display: inline-block; */
+}
+
+.ButtonContainer{
+  width : 40%;
+  display : flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+hr{
+  border: 0;
+  background: black;
+  height: 1px;
+  width: 55%;
+}
